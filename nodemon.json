@@ -2,5 +2,5 @@
   "watch": ["src"],
   "ext": "ts,json",
   "ignore": ["src/**/*.spec.ts"],
-  "exec": "node --no-warnings --import ts-node/register/esm src/index.ts"
+  "exec": "set NODE_NO_WARNINGS=1 && node --loader ts-node/esm src/index.ts"
 }
