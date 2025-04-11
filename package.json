@@ -22,6 +22,8 @@
   "homepage": "https://github.com/mohammad-jodeh/Flash-card#readme",
   "description": "",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "@types/node": "^22.14.0",
     "@types/pg": "^8.11.11",
@@ -35,7 +37,10 @@
     "experimentalSpecifierResolution": "node"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
-    "pg": "^8.14.1"
+    "pg": "^8.14.1",
+    "uuid": "^11.1.0"
   }
 }
