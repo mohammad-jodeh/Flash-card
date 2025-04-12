@@ -33,7 +33,8 @@ export class UserService {
         throw new Error("User not found");
       }
 
-      const isPasswordValid = await compare(login.password, user.password);
+      const isPasswordValid = await compare( user.password, login.password);
+    
 
       if (!isPasswordValid) {
         throw new Error("Invalid password");
