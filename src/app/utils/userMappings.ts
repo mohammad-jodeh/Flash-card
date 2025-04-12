@@ -1,7 +1,7 @@
 import IUser from '../../domain/entites/User.entity.js'
-//TODO import GetUserDTO from '../../domain/dtos/getuser.dto.js'
+import { GetUserDto } from '../../domain/dtos/getuser.dto.js';
 
-export function toGet(user: IUser): any {
+export function toGet(user: IUser): GetUserDto {
     return {
         id: user.id,
         username: user.username,
