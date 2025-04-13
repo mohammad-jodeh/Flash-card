@@ -5,22 +5,30 @@ interface AuthController {
   login: (req: Request, res: Response) => Promise<Response | void>;
 }
 
-function AuthRouter(controller: AuthController) {
+export default function AuthRouter(controller: AuthController) {
   const router = Router();
+
+  // Register route
   router.post("/register", async (req, res) => {
-    
-   
-    await controller.register(req, res);
-
+    try {
+      const result = await controller.register(req, res);
+      if (!result) res.status(500).json({ message: "Registration failed" });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Internal server error" });
+    }
   });
-  router.post("/login", async (req, res) => {
 
-   
-     await controller.login(req, res);
+  // Login route
+  router.post("/login", async (req, res) => {
+    try {
+      const result = await controller.login(req, res);
+      if (!result) res.status(500).json({ message: "Login failed" });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Internal server error" });
+    }
   });
 
   return router;
 }
-
-
-export default AuthRouter;
